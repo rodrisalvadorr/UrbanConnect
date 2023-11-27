@@ -1,0 +1,79 @@
+<h1 class="my-3 text-primary">Atualizar Reclamação</h1>
+
+<div class="card shadow">
+  <form class="m-3">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="problem">Problema:</label>
+          <select
+            class="form-control"
+            aria-label="Selecionar o problema"
+            name="problemReclamacao"
+            [(ngModel)]="reclamacao.problem"
+          >
+            <option selected>Escolha uma opção</option>
+            <option value="Buraco">Buraco</option>
+            <option value="Árvore Caida">Árvore Caida</option>
+            <option value="Iluminação Defeituosa">Iluminação Defeituosa</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="problem">Status:</label>
+          <select
+            class="form-control"
+            aria-label="Selecionar o status"
+            name="problemReclamacao"
+            [(ngModel)]="reclamacao.status"
+          >
+            <option selected>Escolha uma opção</option>
+            <option value="Em andamento">Em andamento</option>
+            <option value="Concluído">Concluído</option>
+            <option value="Expirado">Expirado</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="location">Endereço:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="locationReclamacao"
+            [(ngModel)]="reclamacao.location"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="location">Descrição:</label>
+          <textarea
+            type="text"
+            class="form-control"
+            rows="3"
+            name="descriptionReclamacao"
+            [(ngModel)]="reclamacao.description"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-default" routerLink="/reclamacoes">
+          Voltar
+        </button>
+        <button class="btn btn-warning float-right" (click)="salvarProduto()">
+          Salvar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

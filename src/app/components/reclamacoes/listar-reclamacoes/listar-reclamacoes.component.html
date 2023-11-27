@@ -1,0 +1,42 @@
+<h1 class="my-3 text-primary">
+  Listar Reclamações
+  <button
+    type="button"
+    class="btn btn-success mt-2 float-right"
+    routerLink="/reclamacoes/incluir"
+  >
+    Cadastrar
+  </button>
+</h1>
+
+<div class="card shadow">
+  <table class="table table-responsive table striped">
+    <thead>
+      <tr>
+        <th>Protocolo</th>
+        <th>Problema</th>
+        <th>Endereço</th>
+        <th>Descrição</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reclamacao of listaReclamacoes">
+        <td>{{ reclamacao.id }}</td>
+        <td>{{ reclamacao.problem }}</td>
+        <td>{{ reclamacao.location }}</td>
+        <td>{{ reclamacao.description }}</td>
+        <td>{{ reclamacao.status }}</td>
+        <td>
+          <button class="btn btn-warning" routerLink="/reclamacoes/atualizar/{{ reclamacao.id }}">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-danger ml-2" (click)="deletar(reclamacao)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
